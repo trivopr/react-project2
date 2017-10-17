@@ -2,13 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import { MuiThemeProvider, createMuiTheme } from 'material-ui/styles';
+import lightBlue from 'material-ui/colors/lightBlue';
 
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 
 const theme = createMuiTheme({
     palette: {
-        backgroundColor: 'red'
+        primary: lightBlue,
+        error: 'red'
     },
     appBar: {
         height: 50

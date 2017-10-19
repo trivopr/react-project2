@@ -1,19 +1,83 @@
 {
-  "name": "democra",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "material-ui": "^1.0.0-beta.16",
-    "material-ui-icons": "^1.0.0-beta.15",
-    "react": "^16.0.0",
-    "react-dom": "^16.0.0",
-    "react-scripts": "1.0.14",
-    "react-tap-event-plugin": "^3.0.2"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
-  }
+    "name": "version-2",
+    "version": "0.1.0",
+    "private": true,
+    "dependencies": {
+        "react": "^16.0.0",
+        "react-dom": "^16.0.0",
+        "@sendgrid/mail": "^6.1.4",
+        "electron": "^1.6.11",
+        "file-type": "^6.1.0",
+        "formidable": "^1.1.1",
+        "formsy-material-ui": "^0.6.2",
+        "formsy-react": "^0.19.5",
+        "gh-pages": "^1.0.0",
+        "material-ui": "^0.18.6",
+        "node-sass": "^4.5.3",
+        "nodemon": "^1.11.0",
+        "react-ga": "^2.2.0",
+        "react-helmet": "^5.1.3",
+        "react-masonry-component": "^5.0.7",
+        "react-router-dom": "^4.1.2",
+        "react-scripts": "1.0.11",
+        "react-tap-event-plugin": "^2.0.1",
+        "xss-filters": "^1.2.7"
+    },
+    "devDependencies": {
+        "babel-eslint": "^7.2.3",
+        "cross-env": "^5.0.1",
+        "husky": "^0.14.3",
+        "lint-staged": "^4.0.2",
+        "nightmare": "^2.10.0",
+        "nightmare-upload": "^0.1.1",
+        "node-fetch": "^1.7.1",
+        "node-sass-chokidar": "^0.0.3",
+        "npm-run-all": "^4.0.2",
+        "prettier": "^1.5.3",
+        "standard": "^10.0.2"
+    },
+    "scripts": {
+        "predeploy": "npm run build",
+        "deploy": "gh-pages -d build",
+        "build-css": "node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/",
+        "watch-css": "npm run build-css && node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/ --watch --recursive",
+        "start-js": "react-scripts start",
+        "start-server": "nodemon server.js -w server.js",
+        "start": "npm-run-all -p watch-css start-js start-server",
+        "build": "npm run build-css && react-scripts build",
+        "test": "react-scripts test --env=jsdom",
+        "test-without-watch": "cross-env CI=true npm test",
+        "eject": "react-scripts eject",
+        "lint": "prettier 'src/**/*.js' 'src/components/**/*.js' '*.js' --write --single-quote --no-semi && standard --fix",
+        "precommit": "lint-staged && npm run test-without-watch"
+    },
+    "lint-staged": {
+        "*.js": [
+            "prettier --write --single-quote --no-semi",
+            "standard --fix",
+            "git add"
+        ]
+    },
+    "standard": {
+        "globals": [
+            "fetch",
+            "FormData",
+            "describe",
+            "it",
+            "beforeEach",
+            "expect",
+            "handleClose",
+            "state",
+            "handleNext",
+            "handlePrev",
+            "handleChange",
+            "formatLabelToProperty",
+            "handleFilePath",
+            "handleFormData",
+            "handleDialogClose",
+            "componentDidMount",
+            "handleTabChange"
+        ],
+        "parser": "babel-eslint"
+    }
 }

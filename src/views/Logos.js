@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 
 class Logos extends Component {
   render () {
-    return <div />
+    return <div>LOGOOOOOOOO</div>
   }
 }
 

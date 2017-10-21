@@ -1,5 +1,8 @@
+/* REACT CORE */
 import React from 'react'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
+
+/* COMPONENT IMPORT */
 import SideNav from '../components/SideNav'
 
 /* Material-UI */
@@ -10,6 +13,10 @@ import fusTheme from '../components/fusTheme'
 /* Import Views */
 import Home from '../views/Home'
 import Logos from '../views/Logos'
+
+/* STYLES IMPORT */
+import '../styles/materialize-grid.css'
+import '../styles/App.css'
 
 const Routes = () => {
   return (

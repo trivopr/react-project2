@@ -1,26 +1,24 @@
-import React, { Component } from 'react'
+import React from 'react'
 // eslint-disable-next-line
 import PropTypes from 'prop-types'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 /* MATERIAL UI */
-import { List, ListItem } from 'material-ui/List'
+import { ListItem } from 'material-ui/List'
 
-class SideBarItem extends Component {
-  render () {
-    return (
-      <div>
-        <List>
-          <Link to='/'>
-            <ListItem primaryText='Home' />
-          </Link>
-          <Link to='/logos'>
-            <ListItem primaryText='Logos' />
-          </Link>
-        </List>
-      </div>
-    )
-  }
+const SideBarItem = ({ isExact, linkTo, primaryText, onClick }) => {
+  return (
+    <div>
+      <NavLink
+        activeClassName='active'
+        exact={isExact}
+        to={linkTo}
+        onClick={onClick}
+      >
+        <ListItem primaryText={primaryText} />
+      </NavLink>
+    </div>
+  )
 }
 
 SideBarItem.propTypes = {}

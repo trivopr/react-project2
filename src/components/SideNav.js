@@ -1,12 +1,14 @@
+/* REACT CORE */
 import React, { Component } from 'react'
 
 /* COMPONENT IMPORT */
 import SideBarItem from './SideBarItem'
+import links from '../data/linksData'
 
 /* MATERIAL-UI */
 import AppBar from 'material-ui/AppBar'
 import Drawer from 'material-ui/Drawer'
-// import MenuItem from 'material-ui/MenuItem'
+import { List } from 'material-ui/List'
 
 class SideNav extends Component {
   constructor (props) {
@@ -15,6 +17,8 @@ class SideNav extends Component {
       open: false
     }
   }
+
+  handleClose = () => this.setState({ open: false })
 
   render () {
     return (
@@ -34,7 +38,19 @@ class SideNav extends Component {
         >
           {/* <MenuItem onClick={this.handleClose}>Menu Item</MenuItem>
           <MenuItem onClick={this.handleClose}>Menu Item 2</MenuItem> */}
-          <SideBarItem />
+          <List>
+            {links.map((data, key) => {
+              return (
+                <SideBarItem
+                  key={key}
+                  isExact={data.isExact}
+                  linkTo={data.linkTo}
+                  primaryText={data.text}
+                  onClick={this.handleClose}
+                />
+              )
+            })}
+          </List>
         </Drawer>
       </div>
     )

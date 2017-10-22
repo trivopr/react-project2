@@ -1,6 +1,8 @@
 /* REACT CORE */
 import React, { Component } from 'react'
 
+/* COMPONENT IMPORT */
+
 /* MATERIAL IMPORT */
 import { Card, CardTitle, CardText } from 'material-ui/Card'
 // import FlatButton from 'material-ui/FlatButton';

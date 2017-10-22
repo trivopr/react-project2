@@ -15,7 +15,7 @@ const SideBarItem = ({ isExact, linkTo, primaryText, onClick }) => {
         to={linkTo}
         onClick={onClick}
       >
-        <ListItem primaryText={primaryText} />
+        <ListItem primaryText={primaryText} hoverColor='#eee' />
       </NavLink>
     </div>
   )

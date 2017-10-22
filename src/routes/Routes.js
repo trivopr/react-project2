@@ -4,6 +4,8 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom'
 
 /* COMPONENT IMPORT */
 import SideNav from '../components/SideNav'
+import Posters from '../views/Posters'
+import LetterHead from '../views/LetterHead'
 
 /* Material-UI */
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
@@ -27,16 +29,17 @@ const Routes = () => {
           <Switch>
             <Route exact path='/' component={Home} />
             <Route path='/logos' component={Logos} />
-            {/* <Route path='/posters' component={Posters} />
-                        <Route path='/letterhead' component={Letterhead} />
-                        <Route path='/share-a-story' component={Story} />
-                        <Route path='/planning-guide' component={PlanningGuide} />
-                        <Route path='/glossary' component={Glossary} />
-                        <Route path='/services' component={Services} />
-                        <Route path='/service-request-form' component={ServiceRequest} />
-                        <Route path='/tutorial' component={Tutorial} />
-                        <Route path='/poster-videos' component={PosterVideos} />
-                        <Route component={NotFound} />                     */}
+            <Route path='/posters' component={Posters} />
+            <Route path='/letterhead' component={LetterHead} />
+            {/*
+            <Route path='/share-a-story' component={Story} />
+            <Route path='/planning-guide' component={PlanningGuide} />
+            <Route path='/glossary' component={Glossary} />
+            <Route path='/services' component={Services} />
+            <Route path='/service-request-form' component={ServiceRequest} />
+            <Route path='/tutorial' component={Tutorial} />
+            <Route path='/poster-videos' component={PosterVideos} />
+            <Route component={NotFound} />                     */}
           </Switch>
         </div>
       </MuiThemeProvider>

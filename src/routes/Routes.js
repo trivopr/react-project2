@@ -16,6 +16,7 @@ import fusTheme from '../components/fusTheme'
 import Home from '../views/Home'
 import Logos from '../views/Logos'
 import Story from '../views/Story'
+import ServiceRequest from '../views/ServiceRequest'
 
 /* STYLES IMPORT */
 import '../styles/materialize-grid.css'
@@ -33,11 +34,11 @@ const Routes = () => {
             <Route path='/posters' component={Posters} />
             <Route path='/letterhead' component={LetterHead} />
             <Route path='/share-a-story' component={Story} />
+            <Route path='/service-request-form' component={ServiceRequest} />
             {/*
             <Route path='/planning-guide' component={PlanningGuide} />
             <Route path='/glossary' component={Glossary} />
             <Route path='/services' component={Services} />
-            <Route path='/service-request-form' component={ServiceRequest} />
             <Route path='/tutorial' component={Tutorial} />
             <Route path='/poster-videos' component={PosterVideos} />
             <Route component={NotFound} />                     */}
